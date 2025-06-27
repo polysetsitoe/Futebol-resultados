@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Futebol ao Vivo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-futbol"></i> Futebol ao Vivo</h1>
+                <div class="last-update">
+                    <i class="fas fa-sync-alt" id="refresh-icon"></i>
+                    <span id="last-update-time">Carregando...</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="live">
+                <i class="fas fa-play-circle"></i> Ao Vivo
+            </button>
+            <button class="tab-button" data-tab="today">
+                <i class="fas fa-calendar-day"></i> Hoje
+            </button>
+            <button class="tab-button" data-tab="finished">
+                <i class="fas fa-check-circle"></i> Finalizados
+            </button>
+        </div>
+
+        <div class="content">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Carregando resultados...</p>
+            </div>
+
+            <div class="tab-content active" id="live-content">
+                <div class="matches-container" id="live-matches">
+                    <!-- Jogos ao vivo serão inseridos aqui -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="today-content">
+                <div class="matches-container" id="today-matches">
+                    <!-- Jogos de hoje serão inseridos aqui -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="finished-content">
+                <div class="matches-container" id="finished-matches">
+                    <!-- Jogos finalizados serão inseridos aqui -->
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Erro ao carregar dados. Tentando novamente...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
